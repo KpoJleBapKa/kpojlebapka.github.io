@@ -42,6 +42,38 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* Для позиціонування перемикача мови */
+}
+
+.language-switcher {
+    position: absolute;
+    top: 20px; /* Вирівнюємо по верхньому краю */
+    right: 20px; /* Вирівнюємо по правому краю */
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.lang-btn.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.lang-btn:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
 }
 
 .profile-image-container {
@@ -176,4 +208,40 @@ body {
 
 .languages-list li {
     margin-bottom: 5px;
+}
+
+.project-section {
+    text-align: center;
+}
+
+.project-info {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.project-title {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.project-description {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #2980b9;
 }

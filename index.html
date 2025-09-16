@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме - Арсен Олександрович</title>
+    <title data-i18n-key="resumeTitle"></title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,15 @@
 
     <main class="container">
         <header class="header">
-            <div class="profile-image-container">
-                <img src="profile.jpg" alt="Фото Арсена" class="profile-image">
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ua">UA</button>
             </div>
-            <h1 class="name">Арсен Олександрович</h1>
-            <p class="position">Junior C++ Developer</p>
+            <div class="profile-image-container">
+                <img src="profile.jpg" alt="Arsen's photo" class="profile-image">
+            </div>
+            <h1 class="name" data-i18n-key="fullName"></h1>
+            <p class="position" data-i18n-key="position"></p>
             <div class="contact-info">
                 <a href="mailto:toadkillergamer@gmail.com" class="contact-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -32,64 +36,72 @@
         </header>
 
         <section class="section">
-            <h2 class="section-title">Про мене</h2>
-            <p>Користуюсь ПК з трирічного віку. До вступу в університет переважно цікавився ПК комплектуючими та вирішенням технічних проблем і помилок. Під час навчання в університеті почав активно розвивати нові навички, зокрема: розробка ПЗ для ПК, мобільних пристроїв (Android), розробка ігор (для ПК), розробка веб-сайтів, ботів (дискорд, телеграм). Технології, з якими мав справу: C++, C, C#, HTML/CSS/JS/TS, Java, Kotlin, Git, SQLite, Docker, QT, CMake. Основна мова програмування: C++.</p>
+            <h2 class="section-title" data-i18n-key="aboutMeTitle"></h2>
+            <p data-i18n-key="aboutMeText"></p>
         </section>
 
         <section class="section">
-            <h2 class="section-title">Навички</h2>
+            <h2 class="section-title" data-i18n-key="skillsTitle"></h2>
             <div class="skills-grid">
                 <span class="skill-tag">C++</span>
                 <span class="skill-tag">Git</span>
                 <span class="skill-tag">Windows</span>
                 <span class="skill-tag">QT</span>
                 <span class="skill-tag">Python</span>
-                <span class="skill-tag">Аналітичне мислення</span>
-                <span class="skill-tag">Швидке навчання</span>
-                <span class="skill-tag">Комунікативні навички</span>
-                
+                <span class="skill-tag" data-i18n-key="skill1"></span>
+                <span class="skill-tag" data-i18n-key="skill2"></span>
+                <span class="skill-tag" data-i18n-key="skill3"></span>
             </div>
         </section>
 
         <section class="section">
-            <h2 class="section-title">Освіта</h2>
+            <h2 class="section-title" data-i18n-key="educationTitle"></h2>
             <div class="timeline-item">
-                <h3 class="timeline-title">Державний університет інформаційно-комунікаційних технологій</h3>
-                <p class="timeline-subtitle">F2 інженерія програмного забезпечення</p>
-                <span class="timeline-date">2025 - 2027</span>
+                <h3 class="timeline-title" data-i18n-key="edu1Title"></h3>
+                <p class="timeline-subtitle" data-i18n-key="edu1Subtitle"></p>
+                <span class="timeline-date" data-i18n-key="edu1Date"></span>
             </div>
             <div class="timeline-item">
-                <h3 class="timeline-title">Державний університет інформаційно-комунікаційних технологій</h3>
-                <p class="timeline-subtitle">121 інженерія програмного забезпечення</p>
-                <span class="timeline-date">2021 - 2025</span>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Курси та сертифікати</h2>
-            <div class="timeline-item">
-                <h3 class="timeline-title">Основи тестування програмного забезпечення</h3>
-                <p class="timeline-subtitle">Тестування ПЗ</p>
-                <span class="timeline-date">2025</span>
-            </div>
-            <div class="timeline-item">
-                <h3 class="timeline-title">Git для розподіленої розробки ПЗ</h3>
-                <p class="timeline-subtitle">Використання GIT</p>
-                <span class="timeline-date">2024</span>
-            </div>
-            <div class="timeline-item">
-                <h3 class="timeline-title">Розробка та аналіз алгоритмів C++</h3>
-                <p class="timeline-subtitle">Навички з розробки алгоритмів на мові C++</p>
-                <span class="timeline-date">2022</span>
+                <h3 class="timeline-title" data-i18n-key="edu2Title"></h3>
+                <p class="timeline-subtitle" data-i18n-key="edu2Subtitle"></p>
+                <span class="timeline-date" data-i18n-key="edu2Date"></span>
             </div>
         </section>
 
         <section class="section">
-            <h2 class="section-title">Мови</h2>
+            <h2 class="section-title" data-i18n-key="coursesTitle"></h2>
+            <div class="timeline-item">
+                <h3 class="timeline-title" data-i18n-key="course1Title"></h3>
+                <p class="timeline-subtitle" data-i18n-key="course1Subtitle"></p>
+                <span class="timeline-date" data-i18n-key="course1Date"></span>
+            </div>
+            <div class="timeline-item">
+                <h3 class="timeline-title" data-i18n-key="course2Title"></h3>
+                <p class="timeline-subtitle" data-i18n-key="course2Subtitle"></p>
+                <span class="timeline-date" data-i18n-key="course2Date"></span>
+            </div>
+            <div class="timeline-item">
+                <h3 class="timeline-title" data-i18n-key="course3Title"></h3>
+                <p class="timeline-subtitle" data-i18n-key="course3Subtitle"></p>
+                <span class="timeline-date" data-i18n-key="course3Date"></span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title" data-i18n-key="languagesTitle"></h2>
             <ul class="languages-list">
-                <li>Українська: Рідна</li>
-                <li>Англійська: Поглиблений (C1)</li>
+                <li data-i18n-key="lang1"></li>
+                <li data-i18n-key="lang2"></li>
             </ul>
+        </section>
+        
+        <section class="section project-section">
+            <h2 class="section-title" data-i18n-key="projectTitle"></h2>
+            <div class="project-info">
+                <h3 class="project-title" data-i18n-key="projectName"></h3>
+                <p class="project-description" data-i18n-key="projectDescription"></p>
+                <a href="https://wgmods.net/7235/" class="project-link" target="_blank" data-i18n-key="projectLink"></a>
+            </div>
         </section>
     </main>
     
