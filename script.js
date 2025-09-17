@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             languagesTitle: "Мови",
             lang1: "Українська: Рідна",
             lang2: "Англійська: Поглиблений (C1)",
-            lang2: "Німецька: Початковий (А1)",
+            lang3: "Німецька: Початковий (А1)",
             projectTitle: "Найбільший проєкт",
             projectName: "WOT Configurator",
             projectDescription: "Застосунок для Windows, призначений для зручного перегляду, керування, редагування, збереження та перевірки конфігураційних файлів preferences.xml гри World of Tanks.",
