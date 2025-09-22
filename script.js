@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             resumeTitle: "Resume - Arsen Solovian",
             fullName: "Arsen Solovian",
-            position: "Junior C++ Developer",
+            position: "C++ Developer",
             aboutMeTitle: "PC skills",
-            aboutMeText: "Before university, I was mainly interested in PC components and solving technical problems and errors. While studying at university, I developed new skills, including: software development for PCs, mobile devices, game development, website development, and bots. Technologies I have worked with: C++, C, C#, HTML/CSS/JS/TS, Java, Kotlin, Git, SQLite, Docker, QT, CMake. My main programming language is C++.",
+            aboutMeText: "Before university, I was mainly interested in PC components and solving technical problems and errors. While studying at university, I developed new skills, including: software development for PCs, mobile devices, game development, website development and bots. Technologies I have worked with: C++, C, C#, HTML/CSS/JS/TS, Java, Kotlin, Git, SQLite, Docker, QT, CMake. \n Main programming language: C++\n Framework: Qt ",
             skillsTitle: "Skills",
             skill1: "Analytical Thinking",
             skill2: "Fast Learning",
@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ua: {
             resumeTitle: "Резюме - Арсен Солов'ян",
             fullName: "Арсен Олександрович Солов'ян",
-            position: "Junior C++ Developer",
+            position: "C++ Developer",
             aboutMeTitle: "Комп'ютерні навички",
-            aboutMeText: "До вступу в університет переважно цікавився ПК комплектуючими та вирішенням технічних проблем і помилок. Під час навчання в університеті розвинув нові навички, зокрема: розробка ПЗ для ПК, мобільних пристроїв, розробка ігор, розробка веб-сайтів, ботів. Технології, з якими мав справу: C++, C, C#, HTML/CSS/JS/TS, Java, Kotlin, Git, SQLite, Docker, QT, CMake. Основна мова програмування: C++.",
+            aboutMeText: "До вступу в університет переважно цікавився ПК комплектуючими та вирішенням технічних проблем і помилок. Під час навчання в університеті розвинув нові навички, зокрема: розробка ПЗ для ПК, мобільних пристроїв, розробка ігор, розробка веб-сайтів, ботів. Технології, з якими мав справу: C++, C, C#, HTML/CSS/JS/TS, Java, Kotlin, Git, SQLite, Docker, QT, CMake.\n Основна мова програмування: C++\n Фреймворк: Qt 6",
             skillsTitle: "Навички",
             skill1: "Аналітичне мислення",
             skill2: "Швидке навчання",
