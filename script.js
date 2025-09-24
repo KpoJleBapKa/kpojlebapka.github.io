@@ -32,10 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
             lang1: "Ukrainian: Native",
             lang2: "English: Advanced (C1)",
             lang3: "Deutsch: Beginner (A1)",
-            projectTitle: "My Biggest Project",
-            projectName: "WOT Configurator",
-            projectDescription: "A Windows application designed for convenient viewing, management, editing, saving, and validation of the World of Tanks configuration file preferences.xml.",
-            projectLink: "Learn more about the project"
+            projectTitle: "Projects",
+            //projectName: "Applications page",
+            //projectDescription: "A Windows application designed for convenient viewing, management, editing, saving, and validation of the World of Tanks configuration file preferences.xml.",
+            projectLink: "Released applications",
+            applicationsBtn: "github"
         },
         ua: {
             resumeTitle: "Резюме - Арсен Солов'ян",
@@ -68,10 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
             lang1: "Українська: Рідна",
             lang2: "Англійська: Поглиблений (C1)",
             lang3: "Німецька: Початковий (А1)",
-            projectTitle: "Найбільший проєкт",
-            projectName: "WOT Configurator",
-            projectDescription: "Застосунок для Windows, призначений для зручного перегляду, керування, редагування, збереження та перевірки конфігураційних файлів preferences.xml гри World of Tanks.",
-            projectLink: "Детальніше про проєкт"
+            projectTitle: "Проекти",
+            //projectName: "WOT Configurator",
+            //projectDescription: "Застосунок для Windows, призначений для зручного перегляду, керування, редагування, збереження та перевірки конфігураційних файлів preferences.xml гри World of Tanks.",
+            projectLink: "Опубліковані проекти",
+            applicationsBtn: "github"
         }
     };
 
