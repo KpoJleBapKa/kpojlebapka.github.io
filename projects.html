@@ -1,374 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Apps</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #f0f2f5, #e6ecf3);
-      margin: 0;
-      padding: 30px;
-      color: #222;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(135deg, #f0f2f5, #e6ecf3);
+        margin: 0;
+        padding: 30px;
+        color: #222;
+      }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
-    }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+      }
 
-    h1 {
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: #333;
-    }
+      h1 {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #333;
+      }
 
-    /* Тумблер */
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 30px;
-    }
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0;
-      right: 0; bottom: 0;
-      background-color: #ccc;
-      transition: 0.4s;
-      border-radius: 30px;
-    }
-    .slider:before {
-      position: absolute;
-      content: "EN";
-      height: 24px; width: 26px;
-      left: 3px; top: 3px;
-      background-color: white;
-      color: #333;
-      font-size: 12px;
-      font-weight: bold;
-      text-align: center;
-      line-height: 24px;
-      border-radius: 50%;
-      transition: 0.4s;
-    }
-    input:checked + .slider {
-      background-color: #4cafef;
-    }
-    input:checked + .slider:before {
-      transform: translateX(28px);
-      content: "UA";
-    }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0; left: 0;
+        right: 0; bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 30px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "EN";
+        height: 24px; width: 26px;
+        left: 3px; top: 3px;
+        background-color: white;
+        color: #333;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 24px;
+        border-radius: 50%;
+        transition: 0.4s;
+      }
+      input:checked + .slider {
+        background-color: #4cafef;
+      }
+      input:checked + .slider:before {
+        transform: translateX(28px);
+        content: "UA";
+      }
 
-    /* Контейнер */
-    .apps-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
+      .apps-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
 
-    /* Картки */
-    .app-card {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      width: 300px;
-      padding: 20px;
-      text-align: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .app-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    }
-    .app-card img {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 15px;
-    }
-    .app-card h3 {
-      margin: 10px 0;
-      color: #222;
-      font-size: 1.2rem;
-    }
-    .app-card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
+      .app-card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .app-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      }
+      .app-card img {
+        width: 100%;
+        border-radius: 15px;
+        margin-bottom: 15px;
+      }
+      .app-card h3 {
+        margin: 10px 0;
+        color: #222;
+        font-size: 1.2rem;
+      }
+      .app-card p {
+        font-size: 0.95rem;
+        color: #555;
+      }
 
-    /* Модальне вікно */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 40px 20px;
-      overflow-y: auto;
-    }
-    .modal-content {
-      background: #fff;
-      margin: auto;
-      border-radius: 20px;
-      padding: 35px;
-      max-width: 850px;
-      position: relative;
-      animation: fadeIn 0.3s ease-in-out;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-    .close-btn {
-      position: absolute;
-      right: 20px; top: 15px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #777;
-      cursor: pointer;
-    }
-    .close-btn:hover {
-      color: #000;
-    }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 40px 20px;
+        overflow-y: auto;
+      }
+      .modal-content {
+        background: #fff;
+        margin: auto;
+        border-radius: 20px;
+        padding: 35px;
+        max-width: 850px;
+        position: relative;
+        animation: fadeIn 0.3s ease-in-out;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
+      .close-btn {
+        position: absolute;
+        right: 20px; top: 15px;
+        font-size: 28px;
+        font-weight: bold;
+        color: #777;
+        cursor: pointer;
+      }
+      .close-btn:hover {
+        color: #000;
+      }
 
-    h2 {
-      margin-top: 0;
-      font-size: 1.6rem;
-      color: #333;
-    }
-    h3 {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      color: #444;
-    }
+      h2 {
+        margin-top: 0;
+        font-size: 1.6rem;
+        color: #333;
+      }
+      h3 {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #444;
+      }
 
-    ul, ol {
-      margin: 10px 0 10px 20px;
-    }
-    ul li, ol li {
-      margin-bottom: 5px;
-      line-height: 1.5;
-    }
+      ul, ol {
+        margin: 10px 0 10px 20px;
+      }
+      ul li, ol li {
+        margin-bottom: 5px;
+        line-height: 1.5;
+      }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .download-btn {
+        display: inline-block;
+        margin: 15px 0;
+        padding: 10px 20px;
+        background: #4cafef;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .download-btn:hover {
+        background: #379ad9;
+      }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1 id="page-title">My Applications</h1>
-    <label class="switch">
-      <input type="checkbox" id="langToggle">
-      <span class="slider"></span>
-    </label>
-  </header>
+    <header>
+        <h1 id="page-title">My Applications</h1>
+        <label class="switch">
+            <input type="checkbox" id="langToggle">
+            <span class="slider"></span>
+        </label>
+    </header>
 
-  <div class="apps-container">
-    <!-- WOT Configurator -->
-    <div class="app-card" onclick="openModal('configuratorModal')">
-      <img src="configurator.png" alt="WOT Configurator">
-      <h3 id="conf-title">WOT Configurator</h3>
-      <p id="conf-short">Easy management of World of Tanks configs.</p>
+    <div class="apps-container">
+        <div class="app-card" onclick="openModal('configuratorModal')">
+            <img src="configurator.png" alt="WOT Configurator">
+            <h3 id="conf-title">WOT Configurator</h3>
+            <p id="conf-short"></p>
+        </div>
+
+        <div class="app-card" onclick="openModal('installerModal')">
+            <img src="installer.png" alt="WOT Mod Installer">
+            <h3 id="inst-title">WOT Mod Installer</h3>
+            <p id="inst-short"></p>
+        </div>
+
+        <div class="app-card" onclick="openModal('assistantModal')">
+            <img src="assistant.png" alt="WOT Personal Assistant">
+            <h3 id="assist-title">WOT Personal Assistant</h3>
+            <p id="assist-short"></p>
+        </div>
     </div>
 
-    <!-- WOT Mod Installer -->
-    <div class="app-card" onclick="openModal('installerModal')">
-      <img src="installer.png" alt="WOT Mod Installer">
-      <h3 id="inst-title">WOT Mod Installer</h3>
-      <p id="inst-short">One-click mods installation for WoT.</p>
+    <div id="configuratorModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('configuratorModal')">&times;</span>
+            <h2 id="conf-modal-title">WOT Configurator</h2>
+            <p id="conf-desc"></p>
+            <a id="conf-link" href="#" target="_blank" class="download-btn">🔗 Download / More info</a>
+            <h3 id="conf-features-title"></h3>
+            <ul id="conf-features"></ul>
+        </div>
     </div>
-  </div>
+    
+    <div id="installerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('installerModal')">&times;</span>
+            <h2 id="inst-modal-title">WOT Mod Installer</h2>
+            <p id="inst-desc"></p>
+            <a id="inst-link" href="#" target="_blank" class="download-btn">🔗 Download / More info</a>
+            <h3 id="inst-features-title"></h3>
+            <ul id="inst-features"></ul>
+            <h3 id="inst-howto-title"></h3>
+            <ol id="inst-howto"></ol>
+        </div>
+    </div>
+    
+    <div id="assistantModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('assistantModal')">&times;</span>
+            <h2 id="assist-modal-title">WOT Personal Assistant</h2>
+            <p id="assist-desc"></p>
+            <a id="assist-link" href="#" target="_blank" class="download-btn">🔗 Download / More info</a>
+            <h3 id="assist-features-title"></h3>
+            <ul id="assist-features"></ul>
+        </div>
+    </div>
 
-<!-- Modal WOT Configurator -->
-<div id="configuratorModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('configuratorModal')">&times;</span>
-      <h2 id="conf-modal-title">WOT Configurator</h2>
-      <p id="conf-desc"></p>
-      <a id="conf-link" href="#" target="_blank" class="download-btn">🔗 Download / More info</a>
-      <h3 id="conf-features-title"></h3>
-      <ul id="conf-features"></ul>
-    </div>
-  </div>
-  
-  <!-- Modal WOT Mod Installer -->
-  <div id="installerModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('installerModal')">&times;</span>
-      <h2 id="inst-modal-title">WOT Mod Installer</h2>
-      <p id="inst-desc"></p>
-      <a id="inst-link" href="#" target="_blank" class="download-btn">🔗 Download / More info</a>
-      <h3 id="inst-features-title"></h3>
-      <ul id="inst-features"></ul>
-      <h3 id="inst-howto-title"></h3>
-      <ol id="inst-howto"></ol>
-    </div>
-  </div>
-  
-  <style>
-    .download-btn {
-      display: inline-block;
-      margin: 15px 0;
-      padding: 10px 20px;
-      background: #4cafef;
-      color: white;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .download-btn:hover {
-      background: #379ad9;
-    }
-  </style>
-  
+    <script>
+        const locales = {
+            en: {
+                title: "Applications",
+                conf: {
+                    short: "Easy management of World of Tanks configs.",
+                    desc: "WOT Configurator is a Windows app for managing, editing, saving and validating World of Tanks configuration files (preferences.xml). It also allows player stats viewing and AI assistance.",
+                    link: "https://wgmods.net/7235/",
+                    featuresTitle: "Features",
+                    features: [
+                        "Backup and restore settings.",
+                        "Edit XML configs via user-friendly interface.",
+                        "View configs in read-only mode.",
+                        "Validate XML files.",
+                        "Player stats via Wargaming API.",
+                        "AI Assistant (Google Gemini).",
+                        "Help/FAQ and logging."
+                    ]
+                },
+                inst: {
+                    short: "One-click mods installation for WoT.",
+                    desc: "WOT Mod Installer is a simple and convenient app for automating World of Tanks mod installation.",
+                    link: "https://wgmods.net/7333/",
+                    featuresTitle: "Features",
+                    features: [
+                        "Automatic game folder detection.",
+                        "Manual path selection.",
+                        "Manage mods through a list.",
+                        "Auto-detect game version.",
+                        "Light and dark themes."
+                    ],
+                    howtoTitle: "",
+                    howto: []
+                },
+                assist: {
+                    short: "In-depth analysis of your game replays.",
+                    desc: "WOT Personal Assistant is a desktop application for in-depth analysis of World of Tanks replays. It goes beyond standard statistics, creating a behavioral profile of the player, identifying their strengths and weaknesses, and providing personalized recommendations for improving their skills.",
+                    link: "https://github.com/KpoJleBapKa/WOT-Personal-Assistant", 
+                    featuresTitle: "Key Features",
+                    features: [
+                        "Detailed replay analysis.",
+                        "Behavioral profile creation.",
+                        "Identification of strengths and weaknesses.",
+                        "Personalized skill improvement recommendations.",
+                        "User-friendly interface."
+                    ]
+                }
+            },
+            ua: {
+                title: "Застосунки",
+                conf: {
+                    short: "Зручне керування конфігами World of Tanks.",
+                    desc: "WOT Configurator — це застосунок для Windows для керування, редагування, збереження та перевірки конфігураційних файлів (preferences.xml) гри World of Tanks. Також дозволяє переглядати статистику гравців та користуватися AI-помічником.",
+                    link: "https://wgmods.net/7235/",
+                    featuresTitle: "Можливості",
+                    features: [
+                        "Резервне копіювання та відновлення налаштувань.",
+                        "Редагування XML через зручний інтерфейс.",
+                        "Перегляд у режимі лише для читання.",
+                        "Перевірка XML-файлів.",
+                        "Статистика гравця через Wargaming API.",
+                        "AI-помічник (Google Gemini).",
+                        "Довідка/FAQ та логування."
+                    ]
+                },
+                inst: {
+                    short: "Автоматична установка модів для WoT.",
+                    desc: "WOT Mod Installer — простий застосунок для автоматизації процесу встановлення модів для World of Tanks.",
+                    link: "https://wgmods.net/7333/",
+                    featuresTitle: "Можливості",
+                    features: [
+                        "Автоматичний пошук папки з грою.",
+                        "Ручний вибір шляху.",
+                        "Керування модами через список.",
+                        "Автоматичне визначення версії гри.",
+                        "Світла та темна тема."
+                    ],
+                    howtoTitle: "",
+                    howto: []
+                },
+                assist: {
+                    short: "Поглиблений аналіз ваших ігрових реплеїв.",
+                    desc: "WOT Personal Assistant — це десктопний додаток для поглибленого аналізу реплеїв гри World of Tanks. Він виходить за рамки стандартної статистики, створюючи поведінковий профіль гравця, визначаючи його сильні та слабкі сторони, і надаючи персоналізовані рекомендації для покращення навичок.",
+                    link: "https://github.com/KpoJleBapKa/WOT-Personal-Assistant", 
+                    featuresTitle: "Ключові можливості",
+                    features: [
+                        "Детальний аналіз реплеїв.",
+                        "Створення поведінкового профілю.",
+                        "Визначення сильних та слабких сторін.",
+                        "Персоналізовані рекомендації для покращення гри.",
+                        "Зручний користувацький інтерфейс."
+                    ]
+                }
+            }
+        };
 
-  <script>
-    // Локалізації
-    const locales = {
-      en: {
-        title: "Applications",
-        conf: {
-          short: "Easy management of World of Tanks configs.",
-          desc: "WOT Configurator is a Windows app for managing, editing, saving and validating World of Tanks configuration files (preferences.xml). It also allows player stats viewing and AI assistance.",
-          link: "https://wgmods.net/7235/",
-          featuresTitle: "Features",
-          features: [
-            "Backup and restore settings.",
-            "Edit XML configs via user-friendly interface.",
-            "View configs in read-only mode.",
-            "Validate XML files.",
-            "Player stats via Wargaming API.",
-            "AI Assistant (Google Gemini).",
-            "Help/FAQ and logging."
-          ]
-        },
-        inst: {
-          short: "One-click mods installation for WoT.",
-          desc: "WOT Mod Installer is a simple and convenient app for automating World of Tanks mod installation.",
-          link: "https://wgmods.net/7333/",
-          featuresTitle: "Features",
-          features: [
-            "Automatic game folder detection.",
-            "Manual path selection.",
-            "Manage mods through a list.",
-            "Auto-detect game version.",
-            "Light and dark themes."
-          ],
-          howtoTitle: "How to use",
-          howto: [
-            "Copy mods into the Mods folder.",
-            "Launch the app.",
-            "Select a mod and click Install.",
-            "Choose subfolder for installation."
-          ]
+        let currentLang = "en";
+
+        function setLocale(lang) {
+            currentLang = lang;
+            const t = locales[lang];
+            
+            document.getElementById("page-title").textContent = t.title;
+
+            document.getElementById("conf-title").textContent = "WOT Configurator";
+            document.getElementById("conf-short").textContent = t.conf.short;
+            document.getElementById("conf-modal-title").textContent = "WOT Configurator";
+            document.getElementById("conf-desc").textContent = t.conf.desc;
+            document.getElementById("conf-link").href = t.conf.link;
+            document.getElementById("conf-features-title").textContent = t.conf.featuresTitle;
+            document.getElementById("conf-features").innerHTML = t.conf.features.map(f => `<li>${f}</li>`).join("");
+
+            document.getElementById("inst-title").textContent = "WOT Mod Installer";
+            document.getElementById("inst-short").textContent = t.inst.short;
+            document.getElementById("inst-modal-title").textContent = "WOT Mod Installer";
+            document.getElementById("inst-desc").textContent = t.inst.desc;
+            document.getElementById("inst-link").href = t.inst.link;
+            document.getElementById("inst-features-title").textContent = t.inst.featuresTitle;
+            document.getElementById("inst-features").innerHTML = t.inst.features.map(f => `<li>${f}</li>`).join("");
+            document.getElementById("inst-howto-title").textContent = t.inst.howtoTitle || "";
+            document.getElementById("inst-howto").innerHTML = t.inst.howto ? t.inst.howto.map(h => `<li>${h}</li>`).join("") : "";
+            
+            document.getElementById("assist-title").textContent = "WOT Personal Assistant";
+            document.getElementById("assist-short").textContent = t.assist.short;
+            document.getElementById("assist-modal-title").textContent = "WOT Personal Assistant";
+            document.getElementById("assist-desc").textContent = t.assist.desc;
+            document.getElementById("assist-link").href = t.assist.link;
+            document.getElementById("assist-features-title").textContent = t.assist.featuresTitle;
+            document.getElementById("assist-features").innerHTML = t.assist.features.map(f => `<li>${f}</li>`).join("");
         }
-      },
-      ua: {
-        title: "Застосунки",
-        conf: {
-          short: "Зручне керування конфігами World of Tanks.",
-          desc: "WOT Configurator — це застосунок для Windows для керування, редагування, збереження та перевірки конфігураційних файлів (preferences.xml) гри World of Tanks. Також дозволяє переглядати статистику гравців та користуватися AI-помічником.",
-          link: "https://wgmods.net/7235/",
-          featuresTitle: "Можливості",
-          features: [
-            "Резервне копіювання та відновлення налаштувань.",
-            "Редагування XML через зручний інтерфейс.",
-            "Перегляд у режимі лише для читання.",
-            "Перевірка XML-файлів.",
-            "Статистика гравця через Wargaming API.",
-            "AI-помічник (Google Gemini).",
-            "Довідка/FAQ та логування."
-          ]
-        },
-        inst: {
-          short: "Автоматична установка модів для WoT.",
-          desc: "WOT Mod Installer — простий застосунок для автоматизації процесу встановлення модів для World of Tanks.",
-          link: "https://wgmods.net/7333/",
-          featuresTitle: "Можливості",
-          features: [
-            "Автоматичний пошук папки з грою.",
-            "Ручний вибір шляху.",
-            "Керування модами через список.",
-            "Автоматичне визначення версії гри.",
-            "Світла та темна тема."
-          ],
-          howtoTitle: "Як користуватись",
-          howto: [
-            "Скопіюйте моди у папку Mods.",
-            "Запустіть застосунок.",
-            "Оберіть мод та натисніть Встановити.",
-            "Виберіть підпапку для інсталяції."
-          ]
-        }
-      }
-    };
 
-    // Поточна мова
-    let currentLang = "en";
-
-    function setLocale(lang) {
-        currentLang = lang;
-        const t = locales[lang];
-        document.getElementById("page-title").textContent = t.title;
-
-        document.getElementById("conf-short").textContent = t.conf.short;
-        document.getElementById("conf-desc").textContent = t.conf.desc;
-        document.getElementById("conf-link").href = t.conf.link;
-
-        document.getElementById("conf-features-title").textContent = t.conf.featuresTitle;
-        document.getElementById("conf-features").innerHTML = t.conf.features.map(f => `<li>${f}</li>`).join("");
-
-        document.getElementById("inst-short").textContent = t.inst.short;
-        document.getElementById("inst-desc").textContent = t.inst.desc;
-        document.getElementById("inst-link").href = t.inst.link;
-
-        document.getElementById("inst-features-title").textContent = t.inst.featuresTitle;
-        document.getElementById("inst-features").innerHTML = t.inst.features.map(f => `<li>${f}</li>`).join("");
-        document.getElementById("inst-howto-title").textContent = t.inst.howtoTitle;
-        document.getElementById("inst-howto").innerHTML = t.inst.howto.map(h => `<li>${h}</li>`).join("");
-}
-
-
-    // Ініціалізація EN
-    setLocale("en");
-
-    // Тумблер мови
-    document.getElementById("langToggle").addEventListener("change", function() {
-      if (this.checked) {
-        setLocale("ua");
-      } else {
         setLocale("en");
-      }
-    });
 
-    // Модалки
-    function openModal(id) {
-      document.getElementById(id).style.display = 'block';
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-    window.onclick = function(event) {
-      const modals = document.querySelectorAll('.modal');
-      modals.forEach(modal => {
-        if (event.target === modal) {
-          modal.style.display = "none";
+        document.getElementById("langToggle").addEventListener("change", function() {
+            if (this.checked) {
+                setLocale("ua");
+            } else {
+                setLocale("en");
+            }
+        });
+
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
         }
-      });
-    }
-  </script>
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>

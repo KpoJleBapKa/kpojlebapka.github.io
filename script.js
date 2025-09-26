@@ -1,86 +1,124 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Об'єкт для перекладу
     const translations = {
         en: {
-            resumeTitle: "Resume - Arsen Solovian",
+            resumeTitle: "CV Arsen Solovian",
             fullName: "Arsen Solovian",
-            position: "C++ Developer",
-            aboutMeTitle: "PC skills",
-            aboutMeText: "Before university, I was mainly interested in PC components and solving technical problems and errors. While studying at university, I developed new skills, including: software development for PCs, mobile devices, game development, website development and bots. Technologies I have worked with: C++, C, C#, HTML/CSS/JS/TS, Java, Kotlin, Git, SQLite, Docker, QT, CMake. \n Main programming language: C++\n Framework: Qt ",
-            skillsTitle: "Skills",
-            skill1: "Analytical Thinking",
-            skill2: "Fast Learning",
-            skill3: "Communication Skills",
+            position: "C++/Qt Developer | Desktop Applications | Problem-Solving & Optimization",
+            
+            aboutMeTitle: "About Me",
+            aboutMeText: "I specialize in designing and developing efficient desktop applications using C++ and Qt, with a strong focus on performance, usability, and solving real-world problems. <br><br>My experience spans across building bots, web applications, mobile solutions, and desktop software, delivering end-to-end projects that enhance user experience and streamline workflows. <br><br>Beyond software development, I am deeply passionate about the computer industry and hardware components, which gives me a strong technical foundation and a practical understanding of how software interacts with systems. <br><br>I am always eager to take on challenges that require problem-solving, optimization, and creative thinking.",
+            
+            experienceTitle: "Experience",
+            exp1Title: "Software Developer",
+            exp1Company: "PWNZ inc.",
+            exp1Date: "Jan 2024 - Apr 2024",
+            //exp1Desc: "Developed and maintained high-performance desktop applications using C++ and the Qt framework. Collaborated with a team to implement new features, fix bugs, and optimize code for better performance and user experience.",
+
+            hardSkillsTitle: "Technical Skills",
+            softSkillsTitle: "Soft Skills",
+            softSkill1: "Problem Solving",
+            softSkill2: "Teamwork",
+            softSkill3: "Adaptability",
+            softSkill4: "Attention to Detail",
+            
+            projectsTitle: "Pet-Projects",
+            project1Name: "WOT Configurator",
+            project1Desc: "A Windows application designed for convenient viewing, managing, editing, saving, and validating the World of Tanks configuration file preferences.xml.",
+            project2Name: "WOT Mod Installer",
+            project2Desc: "A user-friendly tool for installing and managing modifications (mods) for the game World of Tanks.",
+            project3Name: "WOT Personal Assistant",
+            project3Desc: "A personal assistant application for World of Tanks players, providing statistics, notifications, and other useful features.",
+            projectLink: "View More",
+
             educationTitle: "Education",
             edu1Title: "State University of Information and Communication Technologies",
-            edu1Subtitle: "F2 Software Engineering",
+            edu1Subtitle: "Master's degree, Software Engineering",
             edu1Date: "2025 - 2027",
             edu2Title: "State University of Information and Communication Technologies",
-            edu2Subtitle: "121 Software Engineering",
+            edu2Subtitle: "Bachelor's degree, Software Engineering",
             edu2Date: "2021 - 2025",
+            
             coursesTitle: "Courses and Certificates",
             course1Title: "Fundamentals of Software Testing",
-            course1Subtitle: "Software Testing",
+            course1Subtitle: "Prometheus",
             course1Date: "2025",
             course2Title: "Git for Distributed Software Development",
-            course2Subtitle: "Using GIT",
+            course2Subtitle: "Prometheus",
             course2Date: "2024",
             course3Title: "C++ Algorithm Development and Analysis",
-            course3Subtitle: "C++ Algorithm Skills",
+            course3Subtitle: "Prometheus",
             course3Date: "2022",
+            
             languagesTitle: "Languages",
             lang1: "Ukrainian: Native",
             lang2: "English: Advanced (C1)",
-            lang3: "Deutsch: Beginner (A1)",
-            projectTitle: "Projects",
-            //projectName: "Applications page",
-            //projectDescription: "A Windows application designed for convenient viewing, management, editing, saving, and validation of the World of Tanks configuration file preferences.xml.",
-            projectLink: "Released applications",
-            applicationsBtn: "github"
+            lang3: "German: Beginner (A1)",
+            
+            githubBtn: "GitHub",
+            linkedinBtn: "LinkedIn"
         },
         ua: {
-            resumeTitle: "Резюме - Арсен Солов'ян",
+            resumeTitle: "CV Arsen Solovian",
             fullName: "Арсен Олександрович Солов'ян",
-            position: "C++ Developer",
-            aboutMeTitle: "Комп'ютерні навички",
-            aboutMeText: "До вступу в університет переважно цікавився ПК комплектуючими та вирішенням технічних проблем і помилок. Під час навчання в університеті розвинув нові навички, зокрема: розробка ПЗ для ПК, мобільних пристроїв, розробка ігор, розробка веб-сайтів, ботів. Технології, з якими мав справу: C++, C, C#, HTML/CSS/JS/TS, Java, Kotlin, Git, SQLite, Docker, QT, CMake.\n Основна мова програмування: C++\n Фреймворк: Qt 6",
-            skillsTitle: "Навички",
-            skill1: "Аналітичне мислення",
-            skill2: "Швидке навчання",
-            skill3: "Комунікативні навички",
+            position: "C++/Qt Developer | Desktop Applications | Problem-Solving & Optimization",
+            
+            aboutMeTitle: "Про мене",
+            aboutMeText: "Я спеціалізуюся на проектуванні та розробці ефективних настільних додатків з використанням C++ та Qt, з сильним акцентом на продуктивність, зручність використання та вирішення реальних проблем.<br><br>Мій досвід охоплює створення ботів, веб-додатків, мобільних рішень та програмного забезпечення для настільних ПК, реалізуючи комплексні проекти, що покращують взаємодію з користувачем та оптимізують робочі процеси.<br><br>Окрім розробки програмного забезпечення, я глибоко захоплений комп'ютерною індустрією та апаратними компонентами, що дає мені міцну технічну основу та практичне розуміння того, як програмне забезпечення взаємодіє з системами.<br><br>Я завжди готовий братися за завдання, що вимагають вирішення проблем, оптимізації та креативного мислення.",
+            
+            experienceTitle: "Досвід роботи",
+            exp1Title: "Розробник програмного забезпечення",
+            exp1Company: "PWNZ inc.",
+            exp1Date: "Січень 2024 - Квітень 2024",
+            //exp1Desc: "Розробляв та підтримував високопродуктивні десктопні додатки з використанням C++ та фреймворку Qt. Співпрацював з командою для впровадження нових функцій, виправлення помилок та оптимізації коду для підвищення продуктивності та покращення користувацького досвіду.",
+
+            hardSkillsTitle: "Hard Skills",
+            softSkillsTitle: "Soft Skills",
+            softSkill1: "Вирішення проблем",
+            softSkill2: "Робота в команді",
+            softSkill3: "Адаптивність",
+            softSkill4: "Уважність до деталей",
+
+            projectsTitle: "Pet-Проекти",
+            project1Name: "WOT Configurator",
+            project1Desc: "Застосунок для Windows, призначений для зручного перегляду, керування, редагування, збереження та перевірки конфігураційного файлу preferences.xml гри World of Tanks.",
+            project2Name: "WOT Mod Installer",
+            project2Desc: "Зручний інструмент для встановлення та керування модифікаціями (модами) для гри World of Tanks.",
+            project3Name: "WOT Personal Assistant",
+            project3Desc: "Персональний асистент для гравців World of Tanks, що надає статистику, сповіщення та інші корисні функції.",
+            projectLink: "Дивитись більше",
+
             educationTitle: "Освіта",
             edu1Title: "Державний університет інформаційно-комунікаційних технологій",
-            edu1Subtitle: "F2 інженерія програмного забезпечення",
+            edu1Subtitle: "Магістр, Інженерія програмного забезпечення",
             edu1Date: "2025 - 2027",
             edu2Title: "Державний університет інформаційно-комунікаційних технологій",
-            edu2Subtitle: "121 інженерія програмного забезпечення",
+            edu2Subtitle: "Бакалавр, Інженерія програмного забезпечення",
             edu2Date: "2021 - 2025",
+            
             coursesTitle: "Курси та сертифікати",
             course1Title: "Основи тестування програмного забезпечення",
-            course1Subtitle: "Тестування ПЗ",
+            course1Subtitle: "Prometheus",
             course1Date: "2025",
             course2Title: "Git для розподіленої розробки ПЗ",
-            course2Subtitle: "Використання GIT",
+            course2Subtitle: "Prometheus",
             course2Date: "2024",
             course3Title: "Розробка та аналіз алгоритмів C++",
-            course3Subtitle: "Навички з розробки алгоритмів на мові C++",
+            course3Subtitle: "Prometheus",
             course3Date: "2022",
+            
             languagesTitle: "Мови",
             lang1: "Українська: Рідна",
-            lang2: "Англійська: Поглиблений (C1)",
+            lang2: "Англійська: Просунутий (C1)",
             lang3: "Німецька: Початковий (А1)",
-            projectTitle: "Проекти",
-            //projectName: "WOT Configurator",
-            //projectDescription: "Застосунок для Windows, призначений для зручного перегляду, керування, редагування, збереження та перевірки конфігураційних файлів preferences.xml гри World of Tanks.",
-            projectLink: "Опубліковані проекти",
-            applicationsBtn: "github"
+            
+            githubBtn: "GitHub",
+            linkedinBtn: "LinkedIn"
         }
     };
 
     const languageSwitcher = document.querySelector('.language-switcher');
     const langBtns = document.querySelectorAll('.lang-btn');
 
-    // Функція для оновлення вмісту сторінки
     function updateContent(lang) {
         const elementsToTranslate = document.querySelectorAll('[data-i18n-key]');
         elementsToTranslate.forEach(element => {
@@ -89,25 +127,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (element.tagName === 'TITLE') {
                     document.title = translations[lang][key];
                 } else {
-                    element.textContent = translations[lang][key];
+                    element.innerHTML = translations[lang][key];
                 }
             }
         });
 
-        // Оновлюємо активний клас для кнопок мови
         langBtns.forEach(btn => {
-            if (btn.getAttribute('data-lang') === lang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
         
-        // Зберігаємо обрану мову у localStorage
         localStorage.setItem('lang', lang);
     }
 
-    // Додаємо обробник подій на клік
     languageSwitcher.addEventListener('click', (event) => {
         if (event.target.classList.contains('lang-btn')) {
             const lang = event.target.getAttribute('data-lang');
@@ -115,8 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Встановлюємо мову при завантаженні сторінки
-    // Якщо мова збережена в localStorage, використовуємо її
-    const savedLang = localStorage.getItem('lang') || 'en';
+    const savedLang = localStorage.getItem('lang') || 'ua'; 
     updateContent(savedLang);
 });

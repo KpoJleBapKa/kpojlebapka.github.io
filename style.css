@@ -5,6 +5,8 @@
     --text-color: #34495e;
     --background-color: #f0f4f7;
     --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --core-skill-color: #27ae60; 
+    --soft-skill-color: #8e44ad; 
 }
 
 * {
@@ -80,6 +82,8 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
+    display: flex; 
+    gap: 10px;     
 }
 
 .apps-btn {
@@ -184,6 +188,14 @@ body {
     transition: transform 0.2s ease;
 }
 
+.skill-tag.core-skill {
+    background-color: var(--core-skill-color);
+}
+
+.skill-tag.soft-skill {
+    background-color: var(--soft-skill-color);
+}
+
 .skill-tag:hover {
     transform: translateY(-2px);
 }
@@ -194,11 +206,15 @@ body {
     padding-left: 20px;
 }
 
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
 .timeline-item::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 5px;
+    top: 8px;
     width: 8px;
     height: 8px;
     background-color: var(--accent-color);
@@ -224,6 +240,14 @@ body {
     display: block;
 }
 
+.timeline-description {
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #555;
+    white-space: pre-wrap;
+}
+
+
 .languages-list {
     list-style: none;
     padding: 0;
@@ -234,25 +258,29 @@ body {
     margin-bottom: 5px;
 }
 
-.project-section {
-    text-align: center;
+.project-item {
+    margin-bottom: 25px;
 }
 
-.project-info {
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    
+.project-item:last-of-type {
+    margin-bottom: 15px;
 }
 
 .project-name {
     font-size: 1.2em;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .project-description {
     color: #555;
+    margin-bottom: 15px;
+}
+
+.project-link-container {
+    text-align: center;
+    margin-top: 20px;
 }
 
 .project-link {
@@ -263,6 +291,7 @@ body {
     text-decoration: none;
     border-radius: 50px;
     transition: background-color 0.3s ease;
+    font-weight: 600;
 }
 
 .project-link:hover {
